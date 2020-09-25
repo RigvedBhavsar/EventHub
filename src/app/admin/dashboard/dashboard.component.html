@@ -1,0 +1,22 @@
+<div>
+    <nav class="avatar" id="head" class="navbar navbar-expand-lg navbar-dark" style="background-color:#67217a;">
+        <a class="navbar-brand" href="#">Admin Login</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/" routerLinkActive="active">Add Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/" routerLinkActive="active">Add Special Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/" routerLinkActive="active">View Users</a>
+            </li>
+        </ul>
+      </div>
+        <button  mat-icon-button aria-label="Example icon-button with a login icon"  *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()" style="color: white;">
+            <mat-icon>logout</mat-icon>
+        </button>
+    </nav>
+</div>
+

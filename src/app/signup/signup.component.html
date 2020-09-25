@@ -1,0 +1,65 @@
+<app-header></app-header>
+<div class="container">
+<div class="py-5">
+    <div class="row">
+      <div class="col-md-auto mx-auto">
+        <span class="anchor" id="formLogin"></span>
+  
+        <!-- form card login -->
+        <div class="card rounded-0" *ngIf="!submitted">      
+            <div class="card-header">
+            <h3 class="mb-0" style="text-align: center;">Register</h3>
+            </div>
+          <div class="card-body">
+            <form [formGroup]="userform" (ngSubmit)="signup()">
+                <label>Name</label>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <small class="text-info">First Name</small>
+                        <input [class.is-invalid]="userform.get('fname').invalid && userform.get('fname').touched" type ="text" class="form-control" formControlName="fname">
+                        <small [class.d-none]="userform.get('fname').valid || userform.get('fname').untouched" class="text-danger">First Name is required</small>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <small class="text-info">Last Name</small>
+                        <input [class.is-invalid]="userform.get('sname').invalid && userform.get('sname').touched" type ="text" class="form-control" formControlName="sname">
+                        <small [class.d-none]="userform.get('sname').valid || userform.get('sname').untouched" class="text-danger">Last Name is required</small>
+                    </div>
+                </div>
+         
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input [class.is-invalid]="userform.get('email').invalid && userform.get('email').touched"type="text" class="form-control" formControlName="email">
+                    <small [class.d-none]="userform.get('email').valid || userform.get('email').untouched" class="text-danger">invalid</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>Contact</label>
+                    <input [class.is-invalid]="userform.get('pnum').invalid && userform.get('pnum').touched" type="phone" class="form-control" formControlName="pnum">
+                    <small [class.d-none]="userform.get('pnum').valid ||userform.get('pnum').untouched" class="text-danger">Invalid</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>Address</label>
+                    <input [class.is-invalid]="userform.get('address').invalid && userform.get('address').touched"type="text" class="form-control" formControlName="address">
+                    <small [class.d-none]="userform.get('address').valid ||userform.get('address').untouched" class="text-danger">Invalid</small>
+                </div>
+                
+        
+                <div class="form-group">
+                    <label>Password</label>
+                    <input [class.is-invalid]="userform.get('password').invalid && userform.get('password').touched" type="password" class="form-control" formControlName="password">  
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    <button  type="submit" [disabled]="userform.invalid" class=" btn btn-primary" style="background-color:#67217a; border-color:#67217a ;">Submit</button> 
+                </div>        
+            </form>  
+          </div>
+          <!--/card-block-->
+        </div>
+        <!-- /form card login -->
+      </div>
+    </div>
+  </div>
+</div>
